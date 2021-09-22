@@ -1,9 +1,32 @@
 package com.denis;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.function.UnaryOperator;
 
 public class NewList<E> extends ArrayList<E> {
+
+    private static Map<Integer, Integer> map;
+    private List<Integer> list = new ArrayList<>();
+
+    public static void count(List<Integer> list) {
+        map = new TreeMap<>();
+        for (Integer i:list) {
+            if (!map.containsKey(i)) {
+                map.put(i,1);
+            } else {
+                map.replace(i, map.get(i).intValue()+1);
+            }
+        }
+
+        for (Map.Entry m:map.entrySet()) {
+            System.out.print(m.getKey());
+            System.out.print(" - ");
+            System.out.println(m.getValue());
+        }
+    }
 
     @Override
     public E remove(int index) {

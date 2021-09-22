@@ -1,8 +1,6 @@
 package com.denis;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,5 +21,29 @@ public class Main {
         list.forEach(System.out::println);
 
         //Check methods
+        list.remove(0);
+        list.clear();
+        list.removeRange(1,2);
+        list.remove(4);
+
+        list.forEach(System.out::println);
+
+//        Map<Integer, Integer> map = new TreeMap<>();
+//        for (Integer i:list) {
+//            if (!map.containsKey(i)) {
+//                map.put(i,1);
+//            } else {
+//                map.replace(i, map.get(i).intValue()+1);
+//            }
+//        }
+//
+//        for (Map.Entry entry:map.entrySet()) {
+//            System.out.print(entry.getKey());
+//            System.out.print(" ");
+//            System.out.println(entry.getValue());
+//        }
+
+        NewList.count(list);
+
     }
 }
