@@ -9,7 +9,6 @@ import java.util.function.UnaryOperator;
 public class NewList<E> extends ArrayList<E> {
 
     private static Map<Integer, Integer> map;
-    private List<Integer> list = new ArrayList<>();
 
     public static void count(List<Integer> list) {
         map = new TreeMap<>();
@@ -17,7 +16,7 @@ public class NewList<E> extends ArrayList<E> {
             if (!map.containsKey(i)) {
                 map.put(i,1);
             } else {
-                map.replace(i, map.get(i).intValue()+1);
+                map.replace(i, map.get(i) +1);
             }
         }
 
