@@ -5,13 +5,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.function.UnaryOperator;
+import java.util.stream.Collectors;
 
 public class NewList<E> extends ArrayList<E> {
 
-    private static Map<Integer, Integer> map;
-
     public static void count(List<Integer> list) {
-        map = new TreeMap<>();
+        Map<Integer, Integer> map = new TreeMap<>();
         for (Integer i:list) {
             if (!map.containsKey(i)) {
                 map.put(i,1);
@@ -25,6 +24,10 @@ public class NewList<E> extends ArrayList<E> {
             System.out.print(" - ");
             System.out.println(m.getValue());
         }
+    }
+
+    public static Map<Object, Long> lambdaCount(List<Integer> list) {
+          return list.stream().collect(Collectors.groupingBy(e ->e, Collectors.counting()));
     }
 
     @Override

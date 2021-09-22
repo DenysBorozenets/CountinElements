@@ -33,8 +33,9 @@ public class Main {
 
 //        NewList.count(list);
 
-        Map<Integer, Long> counts =
-                list.stream().collect(Collectors.groupingBy(e ->e, Collectors.counting()));
+//        Map<Integer, Long> counts =
+//                list.stream().collect(Collectors.groupingBy(e ->e, Collectors.counting()));
         //System.out.println(counts);
+        System.out.println(NewList.lambdaCount(list));
     }
 }
