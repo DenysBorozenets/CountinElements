@@ -1,6 +1,9 @@
 package com.denis;
 
 
+import java.util.Map;
+import java.util.stream.Collectors;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -28,6 +31,10 @@ public class Main {
 
         list.forEach(System.out::println);
 
-        NewList.count(list);
+//        NewList.count(list);
+
+        Map<Integer, Long> counts =
+                list.stream().collect(Collectors.groupingBy(e ->e, Collectors.counting()));
+        //System.out.println(counts);
     }
 }
